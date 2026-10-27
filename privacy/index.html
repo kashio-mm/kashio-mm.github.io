@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Kashio handles account information, bank SMS, location, optional cloud AI and account deletion.">
+  <title>Privacy Policy - Kashio</title>
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <a class="brand" href="../index.html">Kashio</a>
+    <nav aria-label="Policies">
+      <a href="../privacy/index.html" aria-current="page">Privacy Policy</a>
+      <a href="../delete-account/index.html">Delete account</a>
+    </nav>
+  </header>
+  <main id="main">
+    <h1>Privacy Policy</h1>
+    <p class="date">Updated <time datetime="2026-10-27">27 October 2026</time></p>
+    <p class="summary">Kashio turns bank messages into a spending history on your Android phone. Your account, optional cloud analysis and map services have different data-handling boundaries, explained below.</p>
+    <section id="contact">
+      <h2>Who to contact</h2>
+      <p>This policy covers Kashio, formerly Money Minded, Android package <strong>dev.khv.moneyminded</strong>. The Kashio development team operates the app and account service. For privacy questions, correction requests or deletion requests, contact <a href="mailto:noreply.kashio@gmail.com">noreply.kashio@gmail.com</a>.</p>
+    </section>
+    <section id="account">
+      <h2>Account and sign-in information</h2>
+      <p>We send your email address to our account service to deliver a sign-in code. Successful verification creates an account if one does not already exist. We do not request access to your email inbox or Gmail messages.</p>
+      <p>The account service stores your email, account identifier, verification status, creation/update information and session records. A random identifier for this app installation is sent at sign-in to manage sessions. This is not your IMEI or advertising ID.</p>
+      <p>If you choose to provide them, your display name, username and phone number are stored by the account service. Phone entry is optional. The number is self-declared, is labelled unverified, and is not used for sign-in. You can skip adding it. Contact us to request correction or removal of account information.</p>
+      <p>Authenticated requests use account/session tokens to download signed bank-parser and SMS-classifier updates. Your account does not back up or synchronize your transaction history.</p>
+    </section>
+    <section id="sms-location">
+      <h2>Bank messages and location on your phone</h2>
+      <p>With your permission, Kashio reads incoming and historical SMS to identify financial transactions, reminders and messages that need review. Stored bank-message text, transaction amounts, merchants, categories and review decisions are kept in the app's local database. Raw SMS is retained so messages can be reviewed and reparsed.</p>
+      <p>With location permission, Kashio records location near a captured transaction to show spending places and patterns. If you grant background location access, this can happen even when the app is closed or not in use. You can decline or revoke SMS and location permissions in Android settings; the corresponding capture and mapping features will be limited.</p>
+      <p>The account service does not receive your SMS bodies, transaction database, account-number tails or stored transaction coordinates. Optional AI, Maps and deliberate exports are separate data flows described below; the app is not entirely offline.</p>
+    </section>
+    <section id="cloud-ai">
+      <h2>Optional cloud AI</h2>
+      <p>Cloud spending analysis is off until you enable it for a provider in Settings and supply that provider's API key. Enabling it permits daily, weekly and requested analyses to send data to Anthropic Claude or Google Gemini, depending on your selection.</p>
+      <p>The payload includes merchant text, amounts, categories, time-of-day buckets, dates, transaction identifiers, prior review feedback, category totals, spending baselines, recurring-charge summaries and calculated spending ratings. These are financial data even though raw SMS and direct account details are excluded. Raw SMS bodies, account-number tails and location coordinates are not included in the analysis payload.</p>
+      <p>Your selected provider receives the request and network metadata. Provider retention and use depend on the provider and service tier. Google may use unpaid Gemini content to improve its products; use an appropriate paid service for real spending data and review its terms. See <a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy policy</a> and <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a>.</p>
+      <p>You can turn cloud analysis off separately for each provider in Settings. Without permission or a configured key, Kashio uses local fallback analysis. Turning it off prevents future analysis requests from starting; it cannot recall a request already sent or erase a provider's existing records. The connection test sends a fixed test prompt, not your spending history.</p>
+    </section>
+    <section id="maps">
+      <h2>Google Maps</h2>
+      <p>The Map feature uses Google Maps SDK for Android. Maps obtains map content for the area being viewed, which can be centered on your current or transaction locations. Google documents collection of request metadata, IP address, a Maps SDK identifier and crash metrics. Do not treat map usage as wholly local processing.</p>
+      <p>See <a href="https://developers.google.com/maps/documentation/android-sdk/play-data-disclosure">Google's Maps data-disclosure guidance</a> and <a href="https://policies.google.com/privacy">Google's privacy policy</a>. Revoking location permission limits location access but does not remove ordinary network processing when you view a map.</p>
+    </section>
+    <section id="providers">
+      <h2>Service providers and network processing</h2>
+      <p>Our account service uses Google Cloud Run for hosting, Neon PostgreSQL for account storage, and Gmail SMTP to deliver sign-in emails. Account hosting and database processing are currently configured in the United States. Email delivery also involves your email provider. These services can process account information and network/operational metadata needed to deliver their services.</p>
+      <p>Cloud AI providers and Google Maps process the information described in their sections. We use these services to supply the corresponding features, not to sell your transaction history. This policy does not mean every provider operates under identical retention or data-use terms.</p>
+    </section>
+    <section id="exports">
+      <h2>Backups, diagnostic reports and sharing</h2>
+      <p>App-owned backup files may contain raw financial data. The Android automatic app-backup feature is disabled. If you create or share a backup, you control its destination and are responsible for protecting your copy.</p>
+      <p>Developer debug logging is off by default. If enabled, the local debug log can include raw SMS and transaction details. Exporting and sharing that log is an explicit action; review it before sending. The separate model report is designed to contain generic diagnostic wording rather than SMS text, names or amounts. A share sheet lets you choose whether and where to send a report.</p>
+      <p>Support receives information you choose to send. Do not send passwords, sign-in codes, API keys, bank account numbers or raw messages in a privacy/deletion request.</p>
+    </section>
+    <section id="security">
+      <h2>Security</h2>
+      <p>Production account traffic uses HTTPS. Stored sign-in tokens and AI API keys on the phone use Android Keystore-backed encryption. Access to local app data is controlled by Android's application storage protections. User-created exports are not protected by those same app-storage boundaries. No storage or transmission method eliminates every risk.</p>
+    </section>
+    <section id="retention">
+      <h2>Retention</h2>
+      <dl>
+        <dt>Local financial records</dt>
+        <dd>Stored until you delete them or erase the app's local data. Uninstalling or clearing app storage can permanently remove the only copy on that phone. Account sign-in cannot recover it.</dd>
+        <dt>Account and session records</dt>
+        <dd>Your account profile is kept until you delete the account, in the app or by a verified email request. Unused sign-in codes expire after 10 minutes. Sessions expire after 90 days; signed-out or replaced sessions are deleted 30 days after they end. A released username is held for 30 days so it can't be immediately claimed by someone else. Expired records are then deleted by routine automatic cleanup.</dd>
+        <dt>Operational records and backups</dt>
+        <dd>Retention depends on the need to operate and protect the service, provider backup cycles, and any applicable legal obligation. A deletion response will explain any data that must be retained and the reason. Deletion is not a promise that every backup or provider copy disappears instantly.</dd>
+        <dt>Support correspondence</dt>
+        <dd>Used to verify and resolve your request and document its handling. Ask us about removal of correspondence as part of your request. Do not include unnecessary financial information.</dd>
+        <dt>External services and your exports</dt>
+        <dd>AI, map, hosting and email providers have their own applicable retention practices. Copies you independently export or send to other recipients cannot be remotely erased by deleting your Kashio account.</dd>
+      </dl>
+    </section>
+    <section id="deletion">
+      <h2>Your choices and account deletion</h2>
+      <p>You can revoke Android permissions, disable optional cloud analysis and request correction or deletion of account data. While signed in, you can delete your account in the app from the account menu or Settings; deletion takes effect immediately. <a href="../delete-account/index.html">Delete your Kashio account</a> explains this and how to request deletion by email without the app.</p>
+      <p>Account deletion is not sign-out. It removes account-associated data and ends every account session. Records stored only on your phone and independently held exports require separate handling; the deletion page explains these limits. For email requests we will verify ownership before acting, explain any necessary retention and confirm the outcome. This website itself does not delete anything.</p>
+    </section>
+    <section id="website">
+      <h2>This policy website</h2>
+      <p>These static pages do not use analytics, cookies, remote fonts or submission forms supplied by Kashio. When hosted on GitHub Pages, GitHub processes visitor network information, including IP addresses, to serve and secure the site. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>. The copy bundled in the Android app can be read offline; opening external links or sending an email uses other services.</p>
+    </section>
+    <section id="changes">
+      <h2>Policy changes</h2>
+      <p>We update this policy when the app's data handling changes. The date above identifies this version. Material changes to optional processing may require a new choice in the app; a policy update alone is not consent to unrelated processing.</p>
+    </section>
+  </main>
+  <footer><a href="../delete-account/index.html">Request account deletion</a> or contact <a href="mailto:noreply.kashio@gmail.com">noreply.kashio@gmail.com</a>.</footer>
+</body>
+</html>
